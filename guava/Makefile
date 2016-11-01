@@ -37,7 +37,8 @@ J2OBJCC := $(ARCH_BIN_DIR)/j2objcc -c $(INCLUDE_DIRS:%=-I%) $(CC_WARNINGS)
 # and use other versions of Guava without conflict.
 DIST_GUAVA_INCLUDE_DIR = $(ARCH_INCLUDE_DIR)/guava
 
-TRANSLATE_ARGS = -classpath $(CLASSPATH) -encoding UTF-8
+TRANSLATE_ARGS = -classpath $(CLASSPATH) -encoding UTF-8 \
+    --prefixes prefixes.properties
 
 TRANSLATE_MARK = $(BUILD_DIR)/.translate_mark
 OBJC_SOURCES = $(JAVA_SOURCES:%.java=$(GEN_OBJC_DIR)/%.m)
